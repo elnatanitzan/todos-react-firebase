@@ -27,7 +27,6 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = ((theme) => ({
     content: {
-        // width: '100vw',
         flexGrow: 1,
         padding: theme.spacing(2),
     },

@@ -105,7 +105,7 @@ function Login(props) {
 
                     <Grid container>
                         <Grid item>
-                            <Link href="signup" variant="body2">
+                            <Link href="/signup" variant="body2">
                                 Not registered for the app yet? Sign up
                             </Link>
                         </Grid>

@@ -26,7 +26,7 @@ export const useFetch = () => {
     const getAllTodos = () => {
         axios.defaults.headers.common = { Authorization: `${authToken}` };
         axios
-            .get('/todos', { cancelToken: newCancelToken() })   
+            .get('/api/todos', { cancelToken: newCancelToken() })   
             .then((res) => {
                 setTodos(res.data);
                 setUiLoading(false);
@@ -42,7 +42,7 @@ export const useFetch = () => {
         } else {
             axios.defaults.headers.common = { Authorization: `${authToken}` };
             axios
-                .delete(`todos/${todoId}`)
+                .delete(`/api/todos/${todoId}`)
                 .then(() => {
                     getAllTodos();
                 })
@@ -83,13 +83,13 @@ export const useFetch = () => {
         let options = {};
         if (buttonType === 'Edit') {
             options = {
-                url: `/todos/${todoId}`,
+                url: `/api/todos/${todoId}`,
                 method: 'PUT',
                 data: userTodo
             };
         } else {
             options = {
-                url: '/todos',
+                url: '/api/todos',
                 method: 'POST',
                 data: userTodo
             };

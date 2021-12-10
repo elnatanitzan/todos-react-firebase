@@ -47,7 +47,7 @@ const styles = (theme) => ({
 
 function Signup(props) {
     
-    const { welcome,firstName, lastName, userName ,email, password, confirmPassword, errors, loading, signupSubmit, handleChange } = useAuth();
+    const { welcome, firstName, lastName, userName ,email, password, confirmPassword, errors, loading, signupSubmit, handleChange } = useAuth();
     
     const { classes } = props;
 

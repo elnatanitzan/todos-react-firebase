@@ -37,7 +37,7 @@ export const useFetch = () => {
             form_data.append('image', image);
             axios.defaults.headers.common = { Authorization: `${authToken}` };
             axios
-                .post('/user/image', form_data, {
+                .post('/api/user/image', form_data, {
                     headers: {
                         'content-type': 'multipart/form-data'
                     }
@@ -68,7 +68,7 @@ export const useFetch = () => {
                 lastName: lastName
             };
             axios
-                .post('/user', formRequest)
+                .post('/api/user', formRequest)
                 .then(() => {
                     setButtonLoading(false);
                 })
@@ -94,7 +94,7 @@ export const useFetch = () => {
         } else {
             axios.defaults.headers.common = { Authorization: `${authToken}` };
             axios
-                .get('/user', { cancelToken: newCancelToken() })
+                .get('/api/user', { cancelToken: newCancelToken() })
                 
                 .then((res) => {
                         setFirstName(res.data.userCredentials.firstName);

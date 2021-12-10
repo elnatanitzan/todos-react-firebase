@@ -32,7 +32,7 @@ export const useAuth = () => {
         };
         setLoading(true);
         axios
-        .post('/login', userData)
+        .post('/api/login', userData)
         .then((res) => {
             localStorage.setItem('AuthToken', `Bearer ${res.data.token}`);
             setLoading(false);
@@ -58,12 +58,11 @@ export const useAuth = () => {
         };
         setLoading(true);
         axios
-            .post('/signup', newUserData)
+            .post('/api/signup', newUserData)
             .then((res) => {
                 localStorage.setItem('AuthToken', `Bearer ${res.data.token}`);
                 setLoading(false);
                 setWelcome(true);
-                // navigate('/');
             })
             .catch((error) => {
                 console.log(error)
